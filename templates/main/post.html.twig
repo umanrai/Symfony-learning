@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="mt-4">
+        <h3>{{ formm.vars.data.id is null ? 'Create Post' : 'Update Post' }}</h3>
+{#        {{ dump(formm)}}#}
+        {{ form_start(formm) }}
+            <div class="form-group">
+                {{ form_label(formm.title) }}
+                {{ form_widget(formm.title,{'attr':{'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(formm.content) }}
+                {{ form_widget(formm.content,{'attr':{'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(formm.status) }}
+                {{ form_widget(formm.status) }}
+            </div>
+
+            <button type="submit" class="btn btn-primary tm-2">
+                {{ formm.vars.data.id is null ? 'Save Post' : 'Update Post' }}
+            </button>
+{#            {{ form_widget(formm.save) }}#}
+        {{ form_end(formm) }}
+    </div>
+{% endblock %}
