@@ -18,7 +18,7 @@ class MainController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/', name: 'app_main')]
+    #[Route('/blog', name: 'app_main')]
     public function index(): Response
     {
         # retrive data from database
