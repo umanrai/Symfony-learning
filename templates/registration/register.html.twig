@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'auth_base.html.twig' %}
 
 {% block title %}Register{% endblock %}
 
@@ -8,13 +8,32 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        {{ form_row(registrationForm.name, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'username'
+            }
+        }) }}
+        {{ form_row(registrationForm.email, {
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'email'
+            }
+        }) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password',
+            'attr': {
+                'class': 'form-control',
+                'placeholder': 'password',
+            }
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            'attr': {
+                'class': 'form-check-input mb-2',
+            }
+        }) }}
+
+        <button type="submit" class="btn btn-primary">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}

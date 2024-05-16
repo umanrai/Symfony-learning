@@ -18,9 +18,10 @@
                 {{ form_widget(formm.status) }}
             </div>
 
-            <button type="submit" class="btn btn-primary tm-2">
-                {{ formm.vars.data.id is null ? 'Save Post' : 'Update Post' }}
+            <button type="submit" class="btn btn-outline-primary tm-2">
+                {{ formm.vars.data.id is null ? 'Save Post' : 'Update' }}
             </button>
+        <a class="btn btn-primary me-2" href="{{ path('app_main') }}">Back to list</a>
 {#            {{ form_widget(formm.save) }}#}
         {{ form_end(formm) }}
     </div>
