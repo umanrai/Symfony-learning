@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\PostType;
 use App\Entity\Post;
 
-
 class MainController extends AbstractController
 {
     private $em;
@@ -18,7 +17,7 @@ class MainController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/blog', name: 'app_main')]
+    #[Route('/main', name: 'app_main')]
     public function index(): Response
     {
         # retrive data from database
