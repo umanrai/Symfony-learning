@@ -9,7 +9,7 @@
         </div>
     {% endfor %}
 
-    <table class="table">
+    <table class="table table-bordered table-striped my-5">
         <thead>
         <tr>
             <th scope="col">SN</th>
@@ -28,6 +28,7 @@
                 <td>{{ post.content }}</td>
                 <td>{{ post.status }}</td>
                 <td>
+                    <a href="#" class="btn btn-primary">Show</a>
                     <a href="{{ path('edit-post', {id: post.id}) }}" class="btn btn-success">Edit</a>
                     <a href="{{ path('delete-post', {id: post.id}) }}" class="btn btn-danger">Delete</a>
                 </td>
